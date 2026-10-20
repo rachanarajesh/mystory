@@ -14,20 +14,96 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const contactToggle = document.querySelector('.contact-toggle');
 const contactMenu = document.querySelector('.contact-menu');
 
-function closeContactMenu() {
-  contactMenu.classList.remove('open');
-  contactToggle.setAttribute('aria-expanded', 'false');
+const contactButton =
+  document.querySelector(".contact-toggle");
+
+const heroContactButton =
+  document.querySelector(
+    ".hero-contact-trigger"
+  );
+
+const contactModal =
+  document.querySelector(
+    ".contact-modal-backdrop"
+  );
+
+const closeButton =
+  document.querySelector(
+    ".modal-close"
+  );
+
+function openContactModal() {
+
+  contactModal.classList.add("open");
+
+  contactModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
 }
 
-contactToggle.addEventListener('click', e => {
-  e.stopPropagation();
-  const open = contactMenu.classList.toggle('open');
-  contactToggle.setAttribute('aria-expanded', String(open));
-});
+function closeContactModal() {
 
-document.addEventListener('click', e => {
-  if (!e.target.closest('.contact-menu-wrap')) closeContactMenu();
-});
+  contactModal.classList.remove(
+    "open"
+  );
+
+  contactModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+}
+
+contactButton.addEventListener(
+  "click",
+  openContactModal
+);
+
+if (heroContactButton) {
+
+  heroContactButton.addEventListener(
+    "click",
+    openContactModal
+  );
+}
+
+closeButton.addEventListener(
+  "click",
+  closeContactModal
+);
+
+contactModal.addEventListener(
+  "click",
+  event => {
+
+    if (
+      event.target ===
+      contactModal
+    ) {
+      closeContactModal();
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key === "Escape") {
+
+      closeContactModal();
+
+    }
+
+  }
+);
 
 const modalBackdrop = document.querySelector('.contact-modal-backdrop');
 const modalClose = document.querySelector('.modal-close');
