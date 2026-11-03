@@ -794,3 +794,6 @@ section[id], main[id] { scroll-margin-top: 100px; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .btn:hover, .skill-card:hover, .project-card:hover { transform: none; }
 }
+.profile-links .resume-download {
+  font-size: .82rem;
+}

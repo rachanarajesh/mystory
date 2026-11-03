@@ -52,7 +52,12 @@
         <a href="#contact">Contact</a>
       </div>
 
-      <a class="btn btn-small contact-toggle" href="mailto:rachanarajesh117@gmail.com" data-open-contact>Contact me</a>
+<button class="btn btn-small contact-toggle"
+        type="button"
+        aria-label="Open contact options"
+        data-open-contact>
+  Contact me
+</button>
 
     </nav>
   </header>
@@ -77,14 +82,23 @@
         <p class="availability">Charlotte, NC · Open to opportunities across the U.S.</p>
 
         <div class="hero-actions">
-          <a class="btn" href="#projects">View projects</a>
-          <a class="btn btn-secondary" href="assets/Rachana_Rajesh_Resume.pdf" download>Download résumé <span class="file-label">PDF</span></a>
-          <a class="text-link hero-contact-trigger" href="mailto:rachanarajesh117@gmail.com" data-open-contact>Contact me ↗</a>
-        </div>
-        <div class="profile-links" aria-label="Professional profiles">
-          <a href="https://github.com/rachanarajesh" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/rachanar11" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        </div>
+  <a class="btn" href="#projects">View projects</a>
+  <button class="btn btn-secondary hero-contact-trigger"
+          type="button" data-open-contact>
+    Contact me
+  </button>
+</div>
+
+<div class="profile-links" aria-label="Professional profiles">
+  <a href="https://www.linkedin.com/in/rachanar11"
+     target="_blank" rel="noopener noreferrer">
+    LinkedIn ↗
+  </a>
+  <a class="resume-download"
+     href="assets/Rachana_Rajesh_Resume.pdf" download>
+    Download Resume <span class="file-label">PDF</span>
+  </a>
+</div>
 
         <div class="quick-facts">
 
